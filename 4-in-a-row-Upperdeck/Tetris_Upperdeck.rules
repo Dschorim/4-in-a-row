@@ -1,0 +1,91 @@
+
+(rules PCB Tetris_Upperdeck
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3734)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_600:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "LEVEL_1_E" "LEVEL_1_D" GND "LEVEL_1_C" "LEVEL_1_H" "LEVEL_1_B" "LEVEL_1_A" "LEVEL_1_F"
+    "LEVEL_1_G" "SCORE_3_E" "SCORE_3_D" "SCORE_3_C" "SCORE_3_H" "SCORE_3_B" "SCORE_3_A" "SCORE_3_F"
+    "SCORE_3_G" "SCORE_2_E" "SCORE_2_D" "SCORE_2_C" "SCORE_2_H" "SCORE_2_B" "SCORE_2_A" "SCORE_2_F"
+    "SCORE_2_G" "LEVEL_2_H" "LEVEL_0_E" "LEVEL_0_D" "LEVEL_0_C" "LEVEL_0_H" "LEVEL_0_B" "LEVEL_0_A"
+    "LEVEL_0_F" "LEVEL_0_G" "SCORE_1_E" "SCORE_1_D" "SCORE_1_C" "SCORE_1_H" "SCORE_1_B" "SCORE_1_A"
+    "SCORE_1_F" "SCORE_1_G" "SCORE_0_E" "SCORE_0_D" "SCORE_0_C" "SCORE_0_H" "SCORE_0_B" "SCORE_0_A"
+    "SCORE_0_F" "SCORE_0_G" "TOUCH_UP" "TOUCH_LEFT" "TOUCH_DOWN" "TOUCH_RIGHT" "TOUCH_START" "TOUCH_RESET"
+    5V 3,3V "PIN_SIEBENSEG" "SHIFT_SIEBENSEG" "LATCH_SIEBENSEG" "NOT_ENABLE" "NOT_RESET_ALL" "Net-(P2-Pad15)"
+    "Net-(P2-Pad16)" "Net-(U1-Pad9)" "Net-(U2-Pad9)" "Net-(U3-Pad9)" "Net-(U4-Pad9)" "Net-(U5-Pad9)" "Net-(U6-Pad9)" "Net-(U7-Pad9)"
+    "Net-(U8-Pad9)" "Net-(U10-Pad14)" "Net-(U10-Pad9)" "Net-(U11-Pad9)" "Net-(U12-Pad9)" "SCORE_5_E" "SCORE_5_D" "SCORE_5_C"
+    "SCORE_5_H" "SCORE_5_B" "SCORE_5_A" "SCORE_5_F" "SCORE_5_G" "SCORE_4_E" "SCORE_4_D" "SCORE_4_C"
+    "SCORE_4_H" "SCORE_4_B" "SCORE_4_A" "SCORE_4_F" "SCORE_4_G" "SCORE2_B" "ROW_3_E" "ROW_3_D"
+    "ROW_3_C" "ROW_3_H" "ROW_3_B" "ROW_3_A" "ROW_3_F" "ROW_3_G" "ROW_2_E" "ROW_2_D"
+    "ROW_2_C" "ROW_2_H" "ROW_2_B" "ROW_2_A" "ROW_2_F" "ROW_2_G" "ROW_1_E" "ROW_1_D"
+    "ROW_1_C" "ROW_1_H" "ROW_1_B" "ROW_1_A" "ROW_1_F" "ROW_1_G" "ROW_0_E" "ROW_0_D"
+    "ROW_0_C" "ROW_0_H" "ROW_0_B" "ROW_0_A" "ROW_0_F" "ROW_0_G"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

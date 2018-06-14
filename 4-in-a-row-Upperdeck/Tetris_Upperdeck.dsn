@@ -1,0 +1,642 @@
+(pcb /home/jorim/Dokumente/Tetris_Upperdeck/Tetris_Upperdeck.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "4.0.4-stable")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  45720 -115570  144780 -115570  144780 -16510  45720 -16510
+            45720 -115570  45720 -115570)
+    )
+    (via "Via[0-1]_600:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "Displays_7-Segment:7SegmentLED_LTS6760_LTS6780"
+      (place AFF1 88900 -27940 front 0 (PN 7SEGMENTS))
+      (place AFF2 101600 -27940 front 0 (PN 7SEGMENTS))
+      (place AFF3 76200 -66040 front 0 (PN 7SEGMENTS))
+      (place AFF4 88900 -66040 front 0 (PN 7SEGMENTS))
+      (place AFF5 101600 -66040 front 0 (PN 7SEGMENTS))
+      (place AFF6 114300 -66040 front 0 (PN 7SEGMENTS))
+      (place AFF7 63500 -104140 front 0 (PN 7SEGMENTS))
+      (place AFF8 76200 -104140 front 0 (PN 7SEGMENTS))
+      (place AFF9 88900 -104140 front 0 (PN 7SEGMENTS))
+      (place AFF10 101600 -104140 front 0 (PN 7SEGMENTS))
+      (place AFF11 114300 -104140 front 0 (PN 7SEGMENTS))
+      (place AFF12 127000 -104140 front 0 (PN 7SEGMENTS))
+    )
+    (component Pin_Headers:Pin_Header_Straight_1x06
+      (place P1 52070 -91440 front 180 (PN CONN_01X06))
+    )
+    (component "Housings_DIP:DIP-16_W7.62mm"
+      (place U1 129540 -83820 front 270 (PN 74HC595))
+      (place U2 111760 -107950 front 90 (PN 74HC595))
+      (place U3 104140 -83820 front 270 (PN 74HC595))
+      (place U4 104140 -100330 front 270 (PN 74HC595))
+      (place U5 78740 -83820 front 270 (PN 74HC595))
+      (place U6 78740 -100330 front 270 (PN 74HC595))
+      (place U7 116840 -44450 front 270 (PN 74HC595))
+      (place U8 116840 -62230 front 270 (PN 74HC595))
+      (place U9 91440 -44450 front 270 (PN 74HC595))
+      (place U10 91440 -62230 front 270 (PN 74HC595))
+      (place U11 116840 -24130 front 270 (PN 74HC595))
+      (place U12 91440 -24130 front 270 (PN 74HC595))
+    )
+    (component Connect:IDC_Header_Straight_16pins
+      (place P2 53340 -25400 front 270 (PN CONN_02X08))
+    )
+  )
+  (library
+    (image "Displays_7-Segment:7SegmentLED_LTS6760_LTS6780"
+      (outline (path signal 150  4447.21 -5000  4425.32 -5138.2  4361.8 -5262.87  4262.87 -5361.8
+            4138.2 -5425.32  4000 -5447.21  3861.8 -5425.32  3737.13 -5361.8
+            3638.2 -5262.87  3574.68 -5138.2  3552.79 -5000  3574.68 -4861.8
+            3638.2 -4737.13  3737.13 -4638.2  3861.8 -4574.68  4000 -4552.79
+            4138.2 -4574.68  4262.87 -4638.2  4361.8 -4737.13  4425.32 -4861.8))
+      (outline (path signal 150  -3000 5000  -4000 0))
+      (outline (path signal 150  -4000 0  -5000 -5000))
+      (outline (path signal 150  -5000 -5000  2000 -5000))
+      (outline (path signal 150  2000 -5000  3000 0))
+      (outline (path signal 150  4000 5000  3000 0))
+      (outline (path signal 150  3000 0  -4000 0))
+      (outline (path signal 150  -3000 5000  4000 5000))
+      (outline (path signal 150  6300 -9600  -6300 -9600))
+      (outline (path signal 150  -6300 5700  -6300 -5700))
+      (outline (path signal 150  6300 5700  6300 -5700))
+      (outline (path signal 150  -6300 9600  6300 9600))
+      (pin Oval[A]Pad_1524x2524_um 1 -5080 -7620)
+      (pin Oval[A]Pad_1524x2524_um 2 -2540 -7620)
+      (pin Oval[A]Pad_1524x2524_um 3 0 -7620)
+      (pin Oval[A]Pad_1524x2524_um 4 2540 -7620)
+      (pin Oval[A]Pad_1524x2524_um 5 5080 -7620)
+      (pin Oval[A]Pad_1524x2524_um 6 5080 7620)
+      (pin Oval[A]Pad_1524x2524_um 7 2540 7620)
+      (pin Oval[A]Pad_1524x2524_um 8 0 7620)
+      (pin Oval[A]Pad_1524x2524_um 9 -2540 7620)
+      (pin Oval[A]Pad_1524x2524_um 10 -5080 7620)
+    )
+    (image Pin_Headers:Pin_Header_Straight_1x06
+      (outline (path signal 50  -1750 1750  -1750 -14450))
+      (outline (path signal 50  1750 1750  1750 -14450))
+      (outline (path signal 50  -1750 1750  1750 1750))
+      (outline (path signal 50  -1750 -14450  1750 -14450))
+      (outline (path signal 150  1270 -1270  1270 -13970))
+      (outline (path signal 150  1270 -13970  -1270 -13970))
+      (outline (path signal 150  -1270 -13970  -1270 -1270))
+      (outline (path signal 150  1550 1550  1550 0))
+      (outline (path signal 150  1270 -1270  -1270 -1270))
+      (outline (path signal 150  -1550 0  -1550 1550))
+      (outline (path signal 150  -1550 1550  1550 1550))
+      (pin Rect[A]Pad_2032x1727.2_um 1 0 0)
+      (pin Oval[A]Pad_2032x1727.2_um 2 0 -2540)
+      (pin Oval[A]Pad_2032x1727.2_um 3 0 -5080)
+      (pin Oval[A]Pad_2032x1727.2_um 4 0 -7620)
+      (pin Oval[A]Pad_2032x1727.2_um 5 0 -10160)
+      (pin Oval[A]Pad_2032x1727.2_um 6 0 -12700)
+    )
+    (image "Housings_DIP:DIP-16_W7.62mm"
+      (outline (path signal 50  -1050 2450  -1050 -20250))
+      (outline (path signal 50  8650 2450  8650 -20250))
+      (outline (path signal 50  -1050 2450  8650 2450))
+      (outline (path signal 50  -1050 -20250  8650 -20250))
+      (outline (path signal 150  135 2295  135 1025))
+      (outline (path signal 150  7485 2295  7485 1025))
+      (outline (path signal 150  7485 -20075  7485 -18805))
+      (outline (path signal 150  135 -20075  135 -18805))
+      (outline (path signal 150  135 2295  7485 2295))
+      (outline (path signal 150  135 -20075  7485 -20075))
+      (outline (path signal 150  135 1025  -800 1025))
+      (pin Oval[A]Pad_1600x1600_um 1 0 0)
+      (pin Oval[A]Pad_1600x1600_um 2 0 -2540)
+      (pin Oval[A]Pad_1600x1600_um 3 0 -5080)
+      (pin Oval[A]Pad_1600x1600_um 4 0 -7620)
+      (pin Oval[A]Pad_1600x1600_um 5 0 -10160)
+      (pin Oval[A]Pad_1600x1600_um 6 0 -12700)
+      (pin Oval[A]Pad_1600x1600_um 7 0 -15240)
+      (pin Oval[A]Pad_1600x1600_um 8 0 -17780)
+      (pin Oval[A]Pad_1600x1600_um 9 7620 -17780)
+      (pin Oval[A]Pad_1600x1600_um 10 7620 -15240)
+      (pin Oval[A]Pad_1600x1600_um 11 7620 -12700)
+      (pin Oval[A]Pad_1600x1600_um 12 7620 -10160)
+      (pin Oval[A]Pad_1600x1600_um 13 7620 -7620)
+      (pin Oval[A]Pad_1600x1600_um 14 7620 -5080)
+      (pin Oval[A]Pad_1600x1600_um 15 7620 -2540)
+      (pin Oval[A]Pad_1600x1600_um 16 7620 0)
+    )
+    (image Connect:IDC_Header_Straight_16pins
+      (outline (path signal 150  -5080 5820  22860 5820))
+      (outline (path signal 150  -4540 5270  22300 5270))
+      (outline (path signal 150  -5080 -3280  22860 -3280))
+      (outline (path signal 150  -4540 -2730  6640 -2730))
+      (outline (path signal 150  11140 -2730  22300 -2730))
+      (outline (path signal 150  6640 -2730  6640 -3280))
+      (outline (path signal 150  11140 -2730  11140 -3280))
+      (outline (path signal 150  -5080 5820  -5080 -3280))
+      (outline (path signal 150  -4540 5270  -4540 -2730))
+      (outline (path signal 150  22860 5820  22860 -3280))
+      (outline (path signal 150  22300 5270  22300 -2730))
+      (outline (path signal 150  -5080 5820  -4540 5270))
+      (outline (path signal 150  22860 5820  22300 5270))
+      (outline (path signal 150  -5080 -3280  -4540 -2730))
+      (outline (path signal 150  22860 -3280  22300 -2730))
+      (outline (path signal 50  -5350 6050  23100 6050))
+      (outline (path signal 50  23100 6050  23100 -3550))
+      (outline (path signal 50  23100 -3550  -5350 -3550))
+      (outline (path signal 50  -5350 -3550  -5350 6050))
+      (pin Rect[A]Pad_1727.2x1727.2_um 1 0 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 2 0 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 3 2540 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 4 2540 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 5 5080 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 6 5080 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 7 7620 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 8 7620 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 9 10160 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 10 10160 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 11 12700 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 12 12700 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 13 15240 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 14 15240 2540)
+      (pin Oval[A]Pad_1727.2x1727.2_um 15 17780 0)
+      (pin Oval[A]Pad_1727.2x1727.2_um 16 17780 2540)
+    )
+    (padstack Oval[A]Pad_1524x2524_um
+      (shape (path F.Cu 1524  0 -500  0 500))
+      (shape (path B.Cu 1524  0 -500  0 500))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1600x1600_um
+      (shape (path F.Cu 1600  0 0  0 0))
+      (shape (path B.Cu 1600  0 0  0 0))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_2032x1727.2_um
+      (shape (path F.Cu 1727.2  -152.4 0  152.4 0))
+      (shape (path B.Cu 1727.2  -152.4 0  152.4 0))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1727.2x1727.2_um
+      (shape (path F.Cu 1727.2  0 0  0 0))
+      (shape (path B.Cu 1727.2  0 0  0 0))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_2032x1727.2_um
+      (shape (rect F.Cu -1016 -863.6 1016 863.6))
+      (shape (rect B.Cu -1016 -863.6 1016 863.6))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1727.2x1727.2_um
+      (shape (rect F.Cu -863.6 -863.6 863.6 863.6))
+      (shape (rect B.Cu -863.6 -863.6 863.6 863.6))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:400_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net LEVEL_1_E
+      (pins AFF1-1 U12-4)
+    )
+    (net LEVEL_1_D
+      (pins AFF1-2 U12-3)
+    )
+    (net GND
+      (pins AFF1-3 AFF1-8 AFF2-3 AFF2-8 AFF3-3 AFF3-8 AFF4-3 AFF4-8 AFF5-3 AFF5-8
+        AFF6-3 AFF6-8 AFF7-3 AFF7-8 AFF8-3 AFF8-8 AFF9-3 AFF9-8 AFF10-3 AFF10-8 AFF11-3
+        AFF11-8 AFF12-3 AFF12-8 U1-8 U2-8 U3-8 U4-8 U5-8 U6-8 U7-8 U8-8 U9-8 U10-8
+        U11-8 U12-8 P2-1)
+    )
+    (net LEVEL_1_C
+      (pins AFF1-4 U12-2)
+    )
+    (net LEVEL_1_H
+      (pins AFF1-5 U12-7)
+    )
+    (net LEVEL_1_B
+      (pins AFF1-6 U12-1)
+    )
+    (net LEVEL_1_A
+      (pins AFF1-7 U12-15)
+    )
+    (net LEVEL_1_F
+      (pins AFF1-9 U12-5)
+    )
+    (net LEVEL_1_G
+      (pins AFF1-10 U12-6)
+    )
+    (net SCORE_3_E
+      (pins AFF9-1 U4-4)
+    )
+    (net SCORE_3_D
+      (pins AFF9-2 U4-3)
+    )
+    (net SCORE_3_C
+      (pins AFF9-4 U4-2)
+    )
+    (net SCORE_3_H
+      (pins AFF9-5 U4-7)
+    )
+    (net SCORE_3_B
+      (pins AFF9-6 U4-1)
+    )
+    (net SCORE_3_A
+      (pins AFF9-7 U4-15)
+    )
+    (net SCORE_3_F
+      (pins AFF9-9 U4-5)
+    )
+    (net SCORE_3_G
+      (pins AFF9-10 U4-6)
+    )
+    (net SCORE_2_E
+      (pins AFF10-1 U3-4)
+    )
+    (net SCORE_2_D
+      (pins AFF10-2 U3-3)
+    )
+    (net SCORE_2_C
+      (pins AFF10-4 U3-2)
+    )
+    (net SCORE_2_H
+      (pins U3-7)
+    )
+    (net SCORE_2_B
+      (pins U3-1)
+    )
+    (net SCORE_2_A
+      (pins AFF10-7 U3-15)
+    )
+    (net SCORE_2_F
+      (pins AFF10-9 U3-5)
+    )
+    (net SCORE_2_G
+      (pins AFF10-10 U3-6)
+    )
+    (net LEVEL_2_H
+      (pins AFF10-5)
+    )
+    (net LEVEL_0_E
+      (pins AFF2-1 U11-4)
+    )
+    (net LEVEL_0_D
+      (pins AFF2-2 U11-3)
+    )
+    (net LEVEL_0_C
+      (pins AFF2-4 U11-2)
+    )
+    (net LEVEL_0_H
+      (pins AFF2-5 U11-7)
+    )
+    (net LEVEL_0_B
+      (pins AFF2-6 U11-1)
+    )
+    (net LEVEL_0_A
+      (pins AFF2-7 U11-15)
+    )
+    (net LEVEL_0_F
+      (pins AFF2-9 U11-5)
+    )
+    (net LEVEL_0_G
+      (pins AFF2-10 U11-6)
+    )
+    (net SCORE_1_E
+      (pins AFF11-1 U2-4)
+    )
+    (net SCORE_1_D
+      (pins AFF11-2 U2-3)
+    )
+    (net SCORE_1_C
+      (pins AFF11-4 U2-2)
+    )
+    (net SCORE_1_H
+      (pins AFF11-5 U2-7)
+    )
+    (net SCORE_1_B
+      (pins AFF11-6 U2-1)
+    )
+    (net SCORE_1_A
+      (pins AFF11-7 U2-15)
+    )
+    (net SCORE_1_F
+      (pins AFF11-9 U2-5)
+    )
+    (net SCORE_1_G
+      (pins AFF11-10 U2-6)
+    )
+    (net SCORE_0_E
+      (pins AFF12-1 U1-4)
+    )
+    (net SCORE_0_D
+      (pins AFF12-2 U1-3)
+    )
+    (net SCORE_0_C
+      (pins AFF12-4 U1-2)
+    )
+    (net SCORE_0_H
+      (pins AFF12-5 U1-7)
+    )
+    (net SCORE_0_B
+      (pins AFF12-6 U1-1)
+    )
+    (net SCORE_0_A
+      (pins AFF12-7 U1-15)
+    )
+    (net SCORE_0_F
+      (pins AFF12-9 U1-5)
+    )
+    (net SCORE_0_G
+      (pins AFF12-10 U1-6)
+    )
+    (net TOUCH_UP
+      (pins P1-1 P2-9)
+    )
+    (net TOUCH_LEFT
+      (pins P1-2 P2-10)
+    )
+    (net TOUCH_DOWN
+      (pins P1-3 P2-11)
+    )
+    (net TOUCH_RIGHT
+      (pins P1-4 P2-12)
+    )
+    (net TOUCH_START
+      (pins P1-5 P2-13)
+    )
+    (net TOUCH_RESET
+      (pins P1-6 P2-14)
+    )
+    (net 5V
+      (pins P2-2)
+    )
+    (net 3,3V
+      (pins U1-16 U2-16 U3-16 U4-16 U5-16 U6-16 U7-16 U8-16 U9-16 U10-16 U11-16 U12-16
+        P2-3)
+    )
+    (net PIN_SIEBENSEG
+      (pins U1-14 P2-4)
+    )
+    (net SHIFT_SIEBENSEG
+      (pins U1-11 U2-11 U3-11 U4-11 U5-11 U6-11 U7-11 U8-11 U9-11 U10-11 U11-11 U12-11
+        P2-5)
+    )
+    (net LATCH_SIEBENSEG
+      (pins U1-12 U2-12 U3-12 U4-12 U5-12 U6-12 U7-12 U8-12 U9-12 U10-12 U11-12 U12-12
+        P2-6)
+    )
+    (net NOT_ENABLE
+      (pins U1-13 U2-13 U3-13 U4-13 U5-13 U6-13 U7-13 U8-13 U9-13 U10-13 U11-13 U12-13
+        P2-7)
+    )
+    (net NOT_RESET_ALL
+      (pins U1-10 U2-10 U3-10 U4-10 U5-10 U6-10 U7-10 U8-10 U9-10 U10-10 U11-10 U12-10
+        P2-8)
+    )
+    (net "Net-(P2-Pad15)"
+      (pins P2-15)
+    )
+    (net "Net-(P2-Pad16)"
+      (pins P2-16)
+    )
+    (net "Net-(U1-Pad9)"
+      (pins U1-9 U2-14)
+    )
+    (net "Net-(U2-Pad9)"
+      (pins U2-9 U3-14)
+    )
+    (net "Net-(U3-Pad9)"
+      (pins U3-9 U4-14)
+    )
+    (net "Net-(U4-Pad9)"
+      (pins U4-9 U5-14)
+    )
+    (net "Net-(U5-Pad9)"
+      (pins U5-9 U6-14)
+    )
+    (net "Net-(U6-Pad9)"
+      (pins U6-9 U7-14)
+    )
+    (net "Net-(U7-Pad9)"
+      (pins U7-9 U8-14)
+    )
+    (net "Net-(U8-Pad9)"
+      (pins U8-9 U9-14)
+    )
+    (net "Net-(U10-Pad14)"
+      (pins U9-9 U10-14)
+    )
+    (net "Net-(U10-Pad9)"
+      (pins U10-9 U11-14)
+    )
+    (net "Net-(U11-Pad9)"
+      (pins U11-9 U12-14)
+    )
+    (net "Net-(U12-Pad9)"
+      (pins U12-9)
+    )
+    (net SCORE_5_E
+      (pins AFF7-1 U6-4)
+    )
+    (net SCORE_5_D
+      (pins AFF7-2 U6-3)
+    )
+    (net SCORE_5_C
+      (pins AFF7-4 U6-2)
+    )
+    (net SCORE_5_H
+      (pins AFF7-5 U6-7)
+    )
+    (net SCORE_5_B
+      (pins AFF7-6 U6-1)
+    )
+    (net SCORE_5_A
+      (pins AFF7-7 U6-15)
+    )
+    (net SCORE_5_F
+      (pins AFF7-9 U6-5)
+    )
+    (net SCORE_5_G
+      (pins AFF7-10 U6-6)
+    )
+    (net SCORE_4_E
+      (pins AFF8-1 U5-4)
+    )
+    (net SCORE_4_D
+      (pins AFF8-2 U5-3)
+    )
+    (net SCORE_4_C
+      (pins AFF8-4 U5-2)
+    )
+    (net SCORE_4_H
+      (pins AFF8-5 U5-7)
+    )
+    (net SCORE_4_B
+      (pins AFF8-6 U5-1)
+    )
+    (net SCORE_4_A
+      (pins AFF8-7 U5-15)
+    )
+    (net SCORE_4_F
+      (pins AFF8-9 U5-5)
+    )
+    (net SCORE_4_G
+      (pins AFF8-10 U5-6)
+    )
+    (net SCORE2_B
+      (pins AFF10-6)
+    )
+    (net ROW_3_E
+      (pins AFF3-1 U10-4)
+    )
+    (net ROW_3_D
+      (pins AFF3-2 U10-3)
+    )
+    (net ROW_3_C
+      (pins AFF3-4 U10-2)
+    )
+    (net ROW_3_H
+      (pins AFF3-5 U10-7)
+    )
+    (net ROW_3_B
+      (pins AFF3-6 U10-1)
+    )
+    (net ROW_3_A
+      (pins AFF3-7 U10-15)
+    )
+    (net ROW_3_F
+      (pins AFF3-9 U10-5)
+    )
+    (net ROW_3_G
+      (pins AFF3-10 U10-6)
+    )
+    (net ROW_2_E
+      (pins AFF4-1 U9-4)
+    )
+    (net ROW_2_D
+      (pins AFF4-2 U9-3)
+    )
+    (net ROW_2_C
+      (pins AFF4-4 U9-2)
+    )
+    (net ROW_2_H
+      (pins AFF4-5 U9-7)
+    )
+    (net ROW_2_B
+      (pins AFF4-6 U9-1)
+    )
+    (net ROW_2_A
+      (pins AFF4-7 U9-15)
+    )
+    (net ROW_2_F
+      (pins AFF4-9 U9-5)
+    )
+    (net ROW_2_G
+      (pins AFF4-10 U9-6)
+    )
+    (net ROW_1_E
+      (pins AFF5-1 U8-4)
+    )
+    (net ROW_1_D
+      (pins AFF5-2 U8-3)
+    )
+    (net ROW_1_C
+      (pins AFF5-4 U8-2)
+    )
+    (net ROW_1_H
+      (pins AFF5-5 U8-7)
+    )
+    (net ROW_1_B
+      (pins AFF5-6 U8-1)
+    )
+    (net ROW_1_A
+      (pins AFF5-7 U8-15)
+    )
+    (net ROW_1_F
+      (pins AFF5-9 U8-5)
+    )
+    (net ROW_1_G
+      (pins AFF5-10 U8-6)
+    )
+    (net ROW_0_E
+      (pins AFF6-1 U7-4)
+    )
+    (net ROW_0_D
+      (pins AFF6-2 U7-3)
+    )
+    (net ROW_0_C
+      (pins AFF6-4 U7-2)
+    )
+    (net ROW_0_H
+      (pins AFF6-5 U7-7)
+    )
+    (net ROW_0_B
+      (pins AFF6-6 U7-1)
+    )
+    (net ROW_0_A
+      (pins AFF6-7 U7-15)
+    )
+    (net ROW_0_F
+      (pins AFF6-9 U7-5)
+    )
+    (net ROW_0_G
+      (pins AFF6-10 U7-6)
+    )
+    (class kicad_default "" 3,3V 5V GND LATCH_SIEBENSEG LEVEL_0_A LEVEL_0_B
+      LEVEL_0_C LEVEL_0_D LEVEL_0_E LEVEL_0_F LEVEL_0_G LEVEL_0_H LEVEL_1_A
+      LEVEL_1_B LEVEL_1_C LEVEL_1_D LEVEL_1_E LEVEL_1_F LEVEL_1_G LEVEL_1_H
+      LEVEL_2_ LEVEL_2_A LEVEL_2_B LEVEL_2_C LEVEL_2_D LEVEL_2_E LEVEL_2_F
+      LEVEL_2_G LEVEL_2_H LEVEL_3_A LEVEL_3_B LEVEL_3_C LEVEL_3_D LEVEL_3_E
+      LEVEL_3_F LEVEL_3_G LEVEL_3_H LEVEL_4_A LEVEL_4_B LEVEL_4_C LEVEL_4_D
+      LEVEL_4_E LEVEL_4_F LEVEL_4_G LEVEL_4_H LEVEL_5_A LEVEL_5_B LEVEL_5_C
+      LEVEL_5_D LEVEL_5_E LEVEL_5_F LEVEL_5_G LEVEL_5_H NOT_ENABLE NOT_RESET_ALL
+      "Net-(P2-Pad15)" "Net-(P2-Pad16)" "Net-(U1-Pad9)" "Net-(U10-Pad14)"
+      "Net-(U10-Pad9)" "Net-(U11-Pad9)" "Net-(U12-Pad9)" "Net-(U2-Pad9)" "Net-(U3-Pad9)"
+      "Net-(U4-Pad9)" "Net-(U5-Pad9)" "Net-(U6-Pad9)" "Net-(U7-Pad9)" "Net-(U8-Pad9)"
+      PIN_SIEBENSEG ROW_0_A ROW_0_B ROW_0_C ROW_0_D ROW_0_E ROW_0_F ROW_0_G
+      ROW_0_H ROW_1_A ROW_1_B ROW_1_C ROW_1_D ROW_1_E ROW_1_F ROW_1_G ROW_1_H
+      ROW_2_A ROW_2_B ROW_2_C ROW_2_D ROW_2_E ROW_2_F ROW_2_G ROW_2_H ROW_3_A
+      ROW_3_B ROW_3_C ROW_3_D ROW_3_E ROW_3_F ROW_3_G ROW_3_H SCORE2_B SCORE_0_A
+      SCORE_0_B SCORE_0_C SCORE_0_D SCORE_0_E SCORE_0_F SCORE_0_G SCORE_0_H
+      SCORE_1_A SCORE_1_B SCORE_1_C SCORE_1_D SCORE_1_E SCORE_1_F SCORE_1_G
+      SCORE_1_H SCORE_2_A SCORE_2_B SCORE_2_C SCORE_2_D SCORE_2_E SCORE_2_F
+      SCORE_2_G SCORE_2_H SCORE_3_A SCORE_3_B SCORE_3_C SCORE_3_D SCORE_3_E
+      SCORE_3_F SCORE_3_G SCORE_3_H SCORE_4_A SCORE_4_B SCORE_4_C SCORE_4_D
+      SCORE_4_E SCORE_4_F SCORE_4_G SCORE_4_H SCORE_5_A SCORE_5_B SCORE_5_C
+      SCORE_5_D SCORE_5_E SCORE_5_F SCORE_5_G SCORE_5_H SHIFT_SIEBENSEG TOUCH_DOWN
+      TOUCH_LEFT TOUCH_RESET TOUCH_RIGHT TOUCH_START TOUCH_UP
+      (circuit
+        (use_via Via[0-1]_600:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

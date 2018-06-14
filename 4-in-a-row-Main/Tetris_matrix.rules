@@ -1,0 +1,155 @@
+
+(rules PCB Tetris_matrix
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 5758)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 300.2 (type default_VCC))
+    (clear 50.0 (type smd_smd))
+    (clear 300.2 (type smd_VCC))
+    (clear 300.2 (type "kicad_default"_VCC))
+    (clear 100.2 (type SMALL_SMALL))
+    (clear 300.2 (type SMALL_VCC))
+    (clear 300.2 (type VCC_VCC))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_400:300_um"
+    (shape
+      (circle F.Cu 400.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 400.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_400:300_um" "Via[0-1]_400:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_400:300_um-kicad_default" "Via[0-1]_400:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:400_um-SMALL" "Via[0-1]_600:400_um" SMALL
+  )
+  (via 
+    "Via[0-1]_400:300_um-SMALL" "Via[0-1]_400:300_um" SMALL
+  )
+  (via 
+    "Via[0-1]_600:400_um-VCC" "Via[0-1]_600:400_um" VCC
+  )
+  (via 
+    "Via[0-1]_400:300_um-VCC" "Via[0-1]_400:300_um" VCC
+  )
+  (via_rule
+    default "Via[0-1]_400:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (via_rule
+    SMALL "Via[0-1]_400:300_um-SMALL"
+  )
+  (via_rule
+    VCC "Via[0-1]_600:400_um-VCC"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "COLOR_2" "COLOR_3" "COLOR_4" "COLOR_5" "COLOR_6" "COLOR_7" "COLOR_8" "Net-(U1-Pad9)"
+    "NOT_RESET_ALL" "SHIFT_MATRIX_BIG_COLOR" "LATCH_MATRIX_BIG" "NOT_ENABLE" "PIN_MATRIX_BIG_COLOR" "COLOR_1" "COLOR_26" "COLOR_27"
+    "COLOR_28" "COLOR_29" "COLOR_30" "Net-(U2-Pad6)" "Net-(U2-Pad7)" "Net-(U2-Pad9)" "Net-(U2-Pad14)" "COLOR_25"
+    "COLOR_10" "COLOR_11" "COLOR_12" "COLOR_13" "COLOR_14" "COLOR_15" "COLOR_16" "Net-(U3-Pad9)"
+    "COLOR_9" "COLOR_18" "COLOR_19" "COLOR_20" "COLOR_21" "COLOR_22" "COLOR_23" "COLOR_24"
+    "COLOR_17" "GND_2" "GND_3" "GND_4" "GND_5" "GND_6" "GND_7" "GND_8"
+    "Net-(U5-Pad9)" "SHIFT_MATRIX_BIG_GND" "PIN_MATRIX_BIG_GND" "GND_1" "GND_10" "GND_11" "GND_12" "GND_13"
+    "GND_14" "GND_15" "GND_16" "Net-(U6-Pad9)" "GND_9" "GND_18" "GND_19" "GND_20"
+    "Net-(U7-Pad4)" "Net-(U7-Pad5)" "Net-(U7-Pad6)" "Net-(U7-Pad7)" "Net-(U7-Pad9)" "GND_17" "TOUCH_UP" "TOUCH_LEFT"
+    "PIN_MUSIC_R" "PIN_MUSIC_L" "TOUCH_START" "TOUCH_RIGHT" "TOUCH_RESET" "TOUCH_DOWN" "PIN_MATRIX_SMALL" "SHIFT_MATRIX_SMALL"
+    "LATCH_MATRIX_SMALL" "PIN_SIEBENSEG" "SHIFT_SIEBENSEG" "LATCH_SIEBENSEG" "SMALL_2" "SMALL_3" "SMALL_4" "SMALL_5"
+    "SMALL_6" "SMALL_7" "SMALL_8" "SMALL_1" "SMALL_10" "SMALL_11" "SMALL_12" "SMALL_13"
+    "SMALL_14" "SMALL_15" "SMALL_16" "Net-(U10-Pad9)" "SMALL_9" "Net-(P2-Pad21)" "Net-(P2-Pad22)" "Net-(P2-Pad23)"
+    "Net-(P2-Pad24)" "Net-(P2-Pad25)" "Net-(P2-Pad26)" "Net-(P2-Pad27)" "Net-(P2-Pad28)" "Net-(P2-Pad29)" "Net-(P2-Pad30)" 12V
+    "Net-(D1-Pad2)" "Net-(Q1-Pad2)" "Net-(P4-Pad15)" "Net-(P4-Pad16)" "Net-(U9-Pad2)" "Net-(U9-Pad3)" "Net-(U9-Pad4)" "Net-(U9-Pad16)"
+    "Net-(U11-Pad9)" "Net-(U9-Pad20)" "Net-(U9-Pad21)" "Net-(U9-Pad22)" "Net-(U9-Pad29)" "Net-(U9-Pad34)" "Net-(U9-Pad35)" "Net-(U9-Pad17)"
+    "Net-(U9-Pad18)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class SMALL
+    5V "Net-(U8-Pad4)" "Net-(C3-Pad1)" "Net-(C3-Pad2)" "Net-(C5-Pad2)" "Net-(R1-Pad2)" "Net-(R3-Pad1)" "Net-(R4-Pad1)"
+    "Net-(R5-Pad2)" "Net-(R6-Pad2)" "Net-(Q2-Pad2)" "12V_SMALL" "GND_SMALL" "Net-(C1-Pad1)" "Net-(U8-Pad8)" "Net-(U8-Pad9)"
+    "Net-(U8-Pad10)" "Net-(U8-Pad11)" "Net-(U8-Pad19)"
+    (clearance_class SMALL)
+    (via_rule SMALL)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class VCC
+    GND 3,3V VCC
+    (clearance_class VCC)
+    (via_rule VCC)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
