@@ -10,7 +10,7 @@
 #define STANDARD_BPM 120
 unsigned int BPM = STANDARD_BPM;
 
-
+//shooting stars
 unsigned int melody[94][3] = {	{NOTE_DS4, 4, 1},
 								{NOTE_DS4, 8, 0},
 								{NOTE_DS4, 16, 0},
@@ -174,7 +174,7 @@ void set_duty(int duty, int channel)
 	ledc_update_duty(LEDC_HIGH_SPEED_MODE, channel);
 }
 
-void play_tone(char timer_num, unsigned int fqz, unsigned int length, char special)	//special==0 => nothing; special==1 => no space; special==2 => big space
+void play_tone(char timer_num, unsigned int fqz, unsigned int length, char special)	//special==0 => nothing; special==1 => bound; special==2 => staccato
 {
 	if(fqz == 0) set_duty(0,0);
 	else ledc_set_freq(LEDC_HIGH_SPEED_MODE, 0,fqz);
@@ -204,6 +204,7 @@ void music_play()
 	//pwm_timer_setup(0, 440);
 	pwm_timer_setup(0, 2441);
 	pwm_channel_setup(0, 16383, PIN_MUSIC_L, 0);
+	pwm_channel_setup(0, 16383, PIN_MUSIC_R, 0);
 
 	while(1)
 	{
@@ -211,13 +212,6 @@ void music_play()
 		{
 			play_tone(0, melody[i][0], melody[i][1], melody[i][2]);
 		}
-
-		//BPM+=5;
-		/*play_tone(0, 262);
-		play_tone(0, 294);
-		play_tone(0, 330);
-		play_tone(0, 349);
-		pwm_timer_setup(0, 392);
-		vTaskDelay(1000 / portTICK_RATE_MS);*/
 	}
+	vTaskDelete( NULL );
 }
