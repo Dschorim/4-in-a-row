@@ -50,6 +50,12 @@ int max(int a, int b)
 	return b;
 }
 
+int min(int a, int b)
+{
+	if(a<b) return a;
+	return b;
+}
+
 void settle_Part(char active_color, int y_Coord, int x_Coord)
 {
 	y_Coord++;
