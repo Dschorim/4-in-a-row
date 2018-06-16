@@ -176,7 +176,10 @@ void set_duty(int duty, int channel)
 
 void play_tone(char timer_num, unsigned int fqz, unsigned int length, char special)	//special==0 => nothing; special==1 => bound; special==2 => staccato
 {
-	if(fqz == 0) set_duty(0,0);
+	if(fqz == 0)
+	{
+		set_duty(0,0);
+	}
 	else ledc_set_freq(LEDC_HIGH_SPEED_MODE, 0,fqz);
 	switch(special)
 	{
@@ -201,15 +204,15 @@ void play_tone(char timer_num, unsigned int fqz, unsigned int length, char speci
 
 void music_play()
 {
-	//pwm_timer_setup(0, 440);
 	pwm_timer_setup(0, 2441);
-	pwm_channel_setup(0, 16383, PIN_MUSIC_L, 0);
 	pwm_channel_setup(0, 16383, PIN_MUSIC_R, 0);
+	pwm_channel_setup(0, 16383, PIN_MUSIC_L, 0);
 
 	while(1)
 	{
 		for(int i=0;i<94;i++)
 		{
+
 			play_tone(0, melody[i][0], melody[i][1], melody[i][2]);
 		}
 	}
