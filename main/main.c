@@ -24,13 +24,14 @@ char pin_input[6] = {TOUCH_RESET, TOUCH_START, TOUCH_LEFT, TOUCH_UP, TOUCH_DOWN,
 unsigned char touched[6] = {0,0,0,0,0,0};
 unsigned char x_Coord_active = 0;
 char time_start = 0;
+char time_pause = 0;
 
 void timer()
 {
 	while(1)
 	{
 		vTaskDelay(100/portTICK_RATE_MS);
-		set_score(get_score()+1);
+		if(!time_pause) set_score(get_score()+1);
 	}
 	vTaskDelete( NULL );
 }
@@ -240,6 +241,7 @@ void gameplay()
 		char win = check_win();
 		if(win)
 		{
+			time_pause = 1;
 			while(!gpio_get_level(TOUCH_RESET) && !gpio_get_level(TOUCH_START))
 			{
 				for(int c=0;c<2;c++)
@@ -253,6 +255,7 @@ void gameplay()
 					if(gpio_get_level(TOUCH_RESET) || gpio_get_level(TOUCH_START)) break;
 				}
 			}
+			time_pause = 0;
 			if(gpio_get_level(TOUCH_RESET)) esp_restart();
 			for(int y=0;y<20;y++) for(int x=0;x<10;x++) memory[y][x] = 0;
 			set_rows(0);	//clean number of moves
