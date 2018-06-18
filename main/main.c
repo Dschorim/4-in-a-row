@@ -23,6 +23,17 @@ char pin_input[6] = {TOUCH_RESET, TOUCH_START, TOUCH_LEFT, TOUCH_UP, TOUCH_DOWN,
 
 unsigned char touched[6] = {0,0,0,0,0,0};
 unsigned char x_Coord_active = 0;
+char time_start = 0;
+
+void timer()
+{
+	while(1)
+	{
+		vTaskDelay(100/portTICK_RATE_MS);
+		set_score(get_score()+1);
+	}
+	vTaskDelete( NULL );
+}
 
 void gpio_setup(void)
 {
@@ -71,6 +82,22 @@ void settle_Part(char active_color, int y_Coord, int x_Coord)
 	}
 }
 
+void settle_all_Parts()
+{
+	for(int i=0;i<9;i++)
+	{
+		for(int y=18;y>9;y--) for(int x=0;x<10;x++)
+		{
+			if(memory[y][x] && !memory[y+1][x])
+			{
+				memory[y+1][x] = memory[y][x];
+				memory[y][x] = 0;
+			}
+		}
+		vTaskDelay(100/portTICK_RATE_MS);
+	}
+}
+
 void turn_table()
 {
 	char temp1[10][10] = {	{0,0,0,0,0,0,0,0,0,0},
@@ -97,7 +124,8 @@ void turn_table()
 	for(int y=0;y<10;y++) for(int x=0;x<10;x++) temp2[y][x] = temp1[x][9-y];		//turn temp1 to temp2
 	for(int i=0;i<10;i++) for(int j=0;j<10;j++) memory[i+10][j] = temp2[i][j];		//save temp2 to memory
 
-	for(int i=19;i>=10;i--) for(int j=0;j<10;j++) if(memory[i][j]) settle_Part(getRed(memory[i][j])+2*getGreen(memory[i][j]), i, j);
+	//for(int i=18;i>=10;i--) for(int j=0;j<10;j++) if(memory[i][j]) settle_Part(getRed(memory[i][j])+2*getGreen(memory[i][j]), i, j);
+	settle_all_Parts();
 }
 
 char check_win_horizontal()
@@ -179,6 +207,11 @@ void gameplay()
 					if(i==3 && touched[i] == 1)	exit_loop = 2; //up
 					if(i==2 && touched[i] == 1 && x_Coord_active > 0)	//left
 					{
+						if(!time_start)
+						{
+							xTaskCreatePinnedToCore(&timer, "timer", 2048, NULL, 5, NULL, 0);
+							time_start = 1;
+						}
 						memory[9][x_Coord_active] = setRed(memory[9][x_Coord_active], 0);
 						memory[9][x_Coord_active] = setGreen(memory[9][x_Coord_active], 0);
 						x_Coord_active--;
@@ -187,6 +220,11 @@ void gameplay()
 					}
 					if(i==5 && touched[i] == 1 && x_Coord_active < 9)	//right
 					{
+						if(!time_start)
+						{
+							xTaskCreatePinnedToCore(&timer, "timer", 2048, NULL, 5, NULL, 0);
+							time_start = 1;
+						}
 						memory[9][x_Coord_active] = setRed(memory[9][x_Coord_active], 0);
 						memory[9][x_Coord_active] = setGreen(memory[9][x_Coord_active], 0);
 						x_Coord_active++;
@@ -227,16 +265,6 @@ void gameplay()
 	vTaskDelete( NULL );
 }
 
-void timer()
-{
-	while(1)
-	{
-		vTaskDelay(100/portTICK_RATE_MS);
-		set_score(get_score()+1);
-	}
-	vTaskDelete( NULL );
-}
-
 void app_main(void)
 {
 	gpio_setup();
@@ -245,7 +273,6 @@ void app_main(void)
 	xTaskCreatePinnedToCore(&output_matrix, "output_matrix", 2048, NULL, 5, NULL, 1);
 	xTaskCreatePinnedToCore(&music_play, "music_play", 2048, NULL, 5, NULL, 0);
 	xTaskCreatePinnedToCore(&gameplay, "gameplay", 2048, NULL, 5, NULL, 0);
-	xTaskCreatePinnedToCore(&timer, "timer", 2048, NULL, 5, NULL, 0);
 
 	while(1) vTaskDelay(1000/portTICK_RATE_MS);
 }
